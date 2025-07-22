@@ -1,42 +1,17 @@
 package ad.ya.jpainit.entities.basic;
 
-import lombok.RequiredArgsConstructor;
+import ad.ya.jpainit.entities.basic.generic.GenericController;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.OptionalLong;
-
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("b_foo")
-public class B_Foo_Controller {
-    private final B_Foo_Service service;
-
-
-    @GetMapping
-    public List<B_Foo> all() {
-        return service.all();
+public class B_Foo_Controller extends GenericController<B_Foo,Long,B_Foo_Service> {
+    public B_Foo_Controller(B_Foo_Service service) {
+        super(service);
     }
 
     /*@GetMapping({"{id}", "/"})
     public Optional<B_Foo> byId(@PathVariable Optional<Long> id) {
         return service.byId(id.orElse(0L));
     }*/
-
-    @GetMapping("{id}")
-    public Optional<B_Foo> byId(@PathVariable Long id) {
-        return service.byId(id);
-    }
-
-    @DeleteMapping("{id}")
-    public void deleteById(@PathVariable Long id) {
-        service.deleteById(id);
-    }
-
-
-    @RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
-    public B_Foo saveOrUpdate(@RequestBody B_Foo foo) {
-        return service.saveOrUpdate(foo);
-    }
 }

@@ -1,4 +1,4 @@
-package ad.ya.jpainit.entities.basic.relationship;
+package ad.ya.jpainit.entities.basic.relationship.otm;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

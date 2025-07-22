@@ -1,18 +1,13 @@
 package ad.ya.jpainit.entities.basic;
 
-import lombok.RequiredArgsConstructor;
+import ad.ya.jpainit.entities.basic.generic.GenericService;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
-public class B_Foo_Service {
-    private final B_Foo_Repository repo;
-
-    public List<B_Foo> all() {
-        return repo.findAll();
+public class B_Foo_Service extends GenericService<B_Foo,Long,B_Foo_Repository> {
+    public B_Foo_Service(B_Foo_Repository repo) {
+        super(repo);
     }
 
     /*public B_Foo byId(Long id) {
@@ -25,15 +20,4 @@ public class B_Foo_Service {
         return byId.orElse(null);
     }*/
 
-    public Optional<B_Foo> byId(Long id) {
-        return repo.findById(id);
-    }
-
-    public void deleteById(Long id) {
-        repo.deleteById(id);
-    }
-
-    public B_Foo saveOrUpdate(B_Foo foo) {
-        return repo.saveAndFlush(foo);
-    }
 }
