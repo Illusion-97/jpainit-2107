@@ -13,7 +13,7 @@ public class GenericService<
         R extends JpaRepository<E,I>
         > implements I_GenericService<E,I>{
 
-    private final R repo;
+    protected final R repo;
 
     @Override
     public List<E> all() {

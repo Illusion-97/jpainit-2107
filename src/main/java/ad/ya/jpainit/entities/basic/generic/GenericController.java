@@ -11,7 +11,7 @@ public class GenericController<
         E,
         I,
         S extends I_GenericService<E,I>> {
-    private final S service;
+    protected final S service;
 
 
     @GetMapping
