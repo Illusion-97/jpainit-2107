@@ -1,12 +1,11 @@
 package ad.ya.jpainit.entities.basic;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalLong;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,5 +17,15 @@ public class B_Foo_Controller {
     @GetMapping
     public List<B_Foo> all() {
         return service.all();
+    }
+
+    /*@GetMapping({"{id}", "/"})
+    public Optional<B_Foo> byId(@PathVariable Optional<Long> id) {
+        return service.byId(id.orElse(0L));
+    }*/
+
+    @GetMapping("{id}")
+    public Optional<B_Foo> byId(@PathVariable Long id) {
+        return service.byId(id);
     }
 }
