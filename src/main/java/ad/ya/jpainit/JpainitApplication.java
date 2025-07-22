@@ -2,6 +2,7 @@ package ad.ya.jpainit;
 
 import ad.ya.jpainit.entities.basic.B_Foo;
 import ad.ya.jpainit.entities.basic.B_Foo_Repository;
+import ad.ya.jpainit.entities.basic.Person;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,4 +38,6 @@ public class JpainitApplication {
 		repo.deleteById(1L);
 		System.out.println(repo.findAll().size());
 	}
+
+
 }
