@@ -32,4 +32,8 @@ public class B_Foo_Service {
     public void deleteById(Long id) {
         repo.deleteById(id);
     }
+
+    public B_Foo saveOrUpdate(B_Foo foo) {
+        return repo.saveAndFlush(foo);
+    }
 }

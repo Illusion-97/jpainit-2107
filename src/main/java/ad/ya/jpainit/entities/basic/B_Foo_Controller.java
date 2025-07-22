@@ -33,4 +33,10 @@ public class B_Foo_Controller {
     public void deleteById(@PathVariable Long id) {
         service.deleteById(id);
     }
+
+
+    @RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
+    public B_Foo saveOrUpdate(@RequestBody B_Foo foo) {
+        return service.saveOrUpdate(foo);
+    }
 }
