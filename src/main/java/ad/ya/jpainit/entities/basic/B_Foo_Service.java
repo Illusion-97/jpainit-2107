@@ -28,4 +28,8 @@ public class B_Foo_Service {
     public Optional<B_Foo> byId(Long id) {
         return repo.findById(id);
     }
+
+    public void deleteById(Long id) {
+        repo.deleteById(id);
+    }
 }

@@ -35,7 +35,6 @@ public class JpainitApplication {
 						.setAnInt(55)
 		);
 		repo.findById(1L).ifPresent(System.out::println);
-		repo.deleteById(1L);
 		System.out.println(repo.findAll().size());
 	}
 

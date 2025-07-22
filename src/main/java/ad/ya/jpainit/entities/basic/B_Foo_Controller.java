@@ -28,4 +28,9 @@ public class B_Foo_Controller {
     public Optional<B_Foo> byId(@PathVariable Long id) {
         return service.byId(id);
     }
+
+    @DeleteMapping("{id}")
+    public void deleteById(@PathVariable Long id) {
+        service.deleteById(id);
+    }
 }
