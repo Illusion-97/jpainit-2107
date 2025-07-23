@@ -32,6 +32,6 @@ public class GenericService<
 
     @Override
     public E saveOrUpdate(E entity) {
-        return repo.saveAndFlush(entity);
+        return repo.save(entity);
     }
 }

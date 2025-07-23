@@ -1,21 +1,18 @@
 package ad.ya.jpainit.entities.basic;
 
+import ad.ya.jpainit.entities.heritage.mapped_superclass.BaseEntity;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
-public class Person implements Serializable {
-    @Id
-    private long id;
+public class Person extends BaseEntity {
     private String name;
 
     @ManyToMany
