@@ -1,9 +1,10 @@
 package ad.ya.jpainit.entities.basic.generic;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -16,8 +17,8 @@ public class GenericService<
     protected final R repo;
 
     @Override
-    public List<E> all() {
-        return repo.findAll();
+    public Page<E> all(Pageable pageable) {
+        return repo.findAll(pageable);
     }
 
     @Override

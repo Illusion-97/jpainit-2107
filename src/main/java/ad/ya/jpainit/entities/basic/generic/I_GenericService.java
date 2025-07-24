@@ -1,10 +1,12 @@
 package ad.ya.jpainit.entities.basic.generic;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import java.util.Optional;
 
 public interface I_GenericService<E,I> {
-    List<E> all();
+    Page<E> all(Pageable pageable);
 
     Optional<E> byId(I id);
 

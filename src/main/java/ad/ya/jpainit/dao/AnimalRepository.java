@@ -1,5 +1,7 @@
 package ad.ya.jpainit.dao;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -16,4 +18,12 @@ WHERE a.birthday = :date
 
     List<Animal> findByChildren_Name(String name);
     List<Animal> findByChildren_Id(Long id);
+
+    @Query("""
+FROM Animal a
+WHERE (:id IS NULL OR a.id = :id)
+AND (:name IS NULL OR a.name LIKE %:name%)
+AND (:birthday IS NULL OR a.birthday = :birthday)
+""")
+    Page<Animal> search(Long id, String name, LocalDate birthday, Pageable pageable);
 }

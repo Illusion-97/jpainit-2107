@@ -1,10 +1,9 @@
 package ad.ya.jpainit.dao;
 
 import ad.ya.jpainit.entities.basic.generic.GenericController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -34,6 +33,10 @@ public class AnimalController extends GenericController<Animal,Long, AnimalServi
     @GetMapping("byChildrenId/{id}")
     List<Animal> findByChildren_Id(@PathVariable Long id) {
         return service.findByChildren_Id(id);
+    }
 
+    @PostMapping("search")
+    Page<Animal> search(@RequestBody Animal filter, Pageable pageable) {
+        return service.search(filter, pageable);
     }
 }
