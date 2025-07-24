@@ -18,5 +18,7 @@ public class Personne {
     private long id;
     @Embedded
     private Identity identity;
+
+    @OneToMany(mappedBy = "resident")
     private Set<Residence> residences;
 }

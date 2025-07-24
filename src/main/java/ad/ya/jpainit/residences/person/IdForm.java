@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.time.LocalDate;
+
 @Entity
 @Getter
 @Setter
@@ -17,4 +19,7 @@ public abstract class IdForm {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String uuid;
+
+    @Temporal(TemporalType.DATE)
+    private LocalDate issuedAt;
 }

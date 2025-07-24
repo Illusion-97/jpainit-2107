@@ -9,5 +9,6 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class Farm {
+public class Farm extends House {
+    private int livestock;
 }

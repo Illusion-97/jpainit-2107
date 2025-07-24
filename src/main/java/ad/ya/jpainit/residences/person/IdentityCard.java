@@ -11,4 +11,5 @@ import lombok.experimental.Accessors;
 @Setter
 @Accessors(chain = true)
 public class IdentityCard extends IdForm {
+    private String puceId;
 }
