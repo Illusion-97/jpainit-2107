@@ -1,6 +1,7 @@
-package ad.ya.jpainit.residences.house;
+package ad.ya.jpainit.residences.house.residence;
 
-import ad.ya.jpainit.residences.person.Personne;
+import ad.ya.jpainit.residences.house.House;
+import ad.ya.jpainit.residences.person.personne.Personne;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
@@ -22,7 +23,6 @@ public class Residence {
     @Id
     @ManyToOne
     private Personne resident;
-
 
     private boolean main;
 }

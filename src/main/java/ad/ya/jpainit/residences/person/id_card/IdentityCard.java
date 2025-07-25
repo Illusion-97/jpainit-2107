@@ -1,5 +1,7 @@
-package ad.ya.jpainit.residences.house;
+package ad.ya.jpainit.residences.person.id_card;
 
+
+import ad.ya.jpainit.residences.person.IdForm;
 import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,6 +11,6 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class Farm extends House {
-    private int livestock;
+public class IdentityCard extends IdForm {
+    private String puceId;
 }

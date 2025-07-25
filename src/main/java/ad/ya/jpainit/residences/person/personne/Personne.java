@@ -1,6 +1,7 @@
-package ad.ya.jpainit.residences.person;
+package ad.ya.jpainit.residences.person.personne;
 
-import ad.ya.jpainit.residences.house.Residence;
+import ad.ya.jpainit.residences.house.residence.Residence;
+import ad.ya.jpainit.residences.person.Identity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

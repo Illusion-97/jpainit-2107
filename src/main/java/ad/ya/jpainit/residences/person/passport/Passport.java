@@ -1,5 +1,7 @@
-package ad.ya.jpainit.residences.house;
+package ad.ya.jpainit.residences.person.passport;
 
+
+import ad.ya.jpainit.residences.person.IdForm;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import lombok.Getter;
@@ -12,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class Apartment extends House {
+public class Passport extends IdForm {
     @ElementCollection
-    private List<Integer> piecesSurface;
+    private List<String> travels;
 }
